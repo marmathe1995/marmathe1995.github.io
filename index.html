@@ -74,7 +74,22 @@
             .attr('r','5')
             .attr('stroke','black')
             .attr('stroke-width',1)
-            .attr('fill',function (d) { return colorScale(1) })
+            .attr('fill',function (d) {
+                if (d.parental_ed == "some high school") {
+                    return "#F8FF06" }
+                else if (d.parental_ed == "high school") {
+                    return "#FFD506" }
+                if (d.parental_ed == "some college") {
+                    return "#FF9C06" }
+                if (d.parental_ed == "associate's degree") {
+                    return "#FF5E0B" }
+                if (d.parental_ed == "bachelor's degree") {
+                    return "#E61606" }
+                if (d.parental_ed == "master's degree") {
+                    return "#C32121" }
+                else{
+                    return "#080808"
+                }})
             .on('mouseover', function () {
               d3.select(this)
                 .transition()
